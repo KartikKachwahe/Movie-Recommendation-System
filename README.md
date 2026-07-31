@@ -2,9 +2,7 @@
 
 A content-based movie recommendation engine that suggests similar movies using **TF-IDF vectorization** and **cosine similarity**, served through a **FastAPI** backend and an interactive **Streamlit** frontend, with live posters and metadata pulled from **TMDB**.
 
-**Live app 👉 [Open on Streamlit](https://your-app-name.streamlit.app)**
-
-<!-- Replace the link above with your actual Streamlit Community Cloud URL -->
+**Live app 👉 [Open on Streamlit](movie-recommendation-system ∙ main ∙ app.py)**
 
 ---
 
@@ -152,17 +150,26 @@ Contributions are welcome! Feel free to open an issue or submit a pull request.
 
 ---
 
-## 📄 License
+# 👨‍💻 Author
 
-This project currently has no license specified. Consider adding an [MIT License](https://choosealicense.com/licenses/mit/) if you'd like others to freely use and contribute to your work.
+## Kartik Kachwahe
+
+**Aspiring Data Scientist | Data Analyst | Machine Learning | SQL | Power BI | Python**
+
+📧 Email: kartikkachwahe25@gmail.com
+
+💼 LinkedIn: https://www.linkedin.com/in/kartikkachwahe021
+
+💻 GitHub: https://github.com/KartikKachwahe
 
 ---
 
-## 👤 Author
+## ⭐ Support
 
-**Kartik Kachwahe**
-[GitHub](https://github.com/KartikKachwahe)
+If you found this project useful, consider giving the repository a star.
+
+Your support motivates future projects and helps others discover this work.
 
 ---
 
-⭐ If you found this project useful, consider giving it a star on GitHub!
+**Thank you for visiting this repository ❤️**
