@@ -31,3 +31,138 @@ A content-based movie recommendation engine that suggests similar movies using *
 ---
 
 ## 🗂️ Project Structure
+
+Movie-Recommendation-System/
+├── app.py # Streamlit frontend (UI, search, recommendations display)
+├── main.py # FastAPI backend (API routes for search, details, recommendations)
+├── movies.ipynb # Data cleaning, EDA, and TF-IDF model building
+├── movies_metadata.csv # Raw movie metadata dataset
+├── df.pkl # Preprocessed movie dataframe
+├── indices.pkl # Title → index mapping for similarity lookups
+├── tfidf.pkl # Fitted TF-IDF vectorizer
+├── tfidf_matrix.pkl # TF-IDF feature matrix
+├── requirements.txt # Python dependencies
+└── README.md
+
+---
+
+## 🛠️ Tech Stack
+
+| Layer                | Technology |
+|-----------------------|------------|
+| Frontend              | [Streamlit](https://streamlit.io/) |
+| Backend / API         | [FastAPI](https://fastapi.tiangolo.com/) + Uvicorn |
+| ML / Recommendation   | scikit-learn (TF-IDF, cosine similarity), pandas, numpy, scipy |
+| External Data         | [TMDB API](https://www.themoviedb.org/documentation/api) |
+| HTTP Client           | requests / httpx |
+| Deployment            | Streamlit Community Cloud (frontend) + Render (backend API) |
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Python 3.9+
+- A free [TMDB API key](https://www.themoviedb.org/settings/api)
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/KartikKachwahe/Movie-Recommendation-System.git
+cd Movie-Recommendation-System
+```
+
+### 2. Create a virtual environment & install dependencies
+
+```bash
+python -m venv venv
+source venv/bin/activate      # On Windows: venv\Scripts\activate
+pip install -r requirements.txt
+```
+
+### 3. Set up environment variables
+
+Create a `.env` file in the project root:
+
+```env
+TMDB_API_KEY=your_tmdb_api_key_here
+```
+
+### 4. Run the backend API (FastAPI)
+
+```bash
+uvicorn main:app --reload
+```
+
+The API will be available at `http://127.0.0.1:8000`.
+
+### 5. Run the Streamlit frontend
+
+In a separate terminal:
+
+```bash
+streamlit run app.py
+```
+
+The app will open at `http://localhost:8501`.
+
+> **Note:** `app.py` points to a deployed backend URL by default (`API_BASE` in `app.py`). Update this variable to `http://127.0.0.1:8000` if you're running the backend locally.
+
+---
+
+## 📡 API Endpoints (FastAPI backend)
+
+| Endpoint | Description |
+|---|---|
+| `GET /tmdb/search?query=` | Search movies by title (TMDB) |
+| `GET /home?category=&limit=` | Home feed by category (trending, popular, top_rated, now_playing, upcoming) |
+| `GET /movie/id/{tmdb_id}` | Full movie details by TMDB ID |
+| `GET /movie/search?query=` | Bundled TF-IDF + genre recommendations for a title |
+| `GET /recommend/genre?tmdb_id=&limit=` | Genre-based recommendations |
+
+---
+
+## 📸 Preview
+
+<!-- Add a screenshot or GIF of the app here -->
+<!-- ![App Screenshot](assets/demo.png) -->
+
+---
+
+## 🗺️ Roadmap
+
+- [ ] Add collaborative filtering (user-based recommendations)
+- [ ] Add a "watchlist" / favorites feature
+- [ ] Improve cold-start recommendations for new users
+- [ ] Add unit tests for the FastAPI endpoints
+- [ ] Dockerize the full stack
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Feel free to open an issue or submit a pull request.
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+---
+
+## 📄 License
+
+This project currently has no license specified. Consider adding an [MIT License](https://choosealicense.com/licenses/mit/) if you'd like others to freely use and contribute to your work.
+
+---
+
+## 👤 Author
+
+**Kartik Kachwahe**
+[GitHub](https://github.com/KartikKachwahe)
+
+---
+
+⭐ If you found this project useful, consider giving it a star on GitHub!
