@@ -2,7 +2,7 @@
 
 A content-based movie recommendation engine that suggests similar movies using **TF-IDF vectorization** and **cosine similarity**, served through a **FastAPI** backend and an interactive **Streamlit** frontend, with live posters and metadata pulled from **TMDB**.
 
-**Live app 👉 [Open on Streamlit](https://movie-recommendation-system-capy8uts3v97xz55xhuj65.streamlit.app/)**
+**Live app 👉 [Open on Streamlit](https://movie-recommendation-system-tbwgaistgz6uotqvtjmbuw.streamlit.app/)**
 
 ---
 
